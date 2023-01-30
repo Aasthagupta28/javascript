@@ -1,0 +1,100 @@
+1) Object Destructuring:
+
+Example 1 :
+const person = {
+name: 'Priya',
+age: 21,
+city: 'Solan'
+}
+const {name, age, city} = person;
+console.log(name, age);
+
+// // Example 2 : (using alias )
+const person = {
+name: 'Priya',
+age: 21,
+city: 'Solan'
+}
+const name = 'Siya';
+const {name: fname, age} = person;
+console.log(fname, age);
+
+2) Array destructuring :
+Example :
+const names = ['Karan', 'Rajat'];
+const [name1, name2] = names;
+console.log(name1,name2);
+
+3) Spread Operator:
+// Example Using array:
+const arr1 = ['one', 'two'];
+const arr2 = [...arr1,'three', 'four', 'five'];
+console.log(arr2);
+
+// Example Using objects:
+const person = {
+Day:'Sunday',
+Month: 'jan'
+}
+const person2 = { ...person, Week: 'fourth'
+}
+console.log(person2);
+
+4) For Of Loop :
+Example 1 :
+const cities = ['Chamba', 'Kangra'];
+for(let name of cities){
+console.log(name);
+}
+
+// Example 2 :
+const string = 'code';
+for (let i of string) {
+console.log(i);
+}
+
+5) For in Loop:
+Example:
+const person = {
+Exam: 'Maths',
+Branch: 'Science',
+Location:'Shimla'
+}
+for(let key in person){
+console.log(key + '' + person[key]);
+}
+
+6) String Template Literals:
+Example:
+const person = {
+name : 'Shakshi',
+city : 'Jalandhar',
+state :'HP'
+}
+for (let key in person)
+{
+const result = `key = ${key}, value = ${person[key]}`;
+
+console.log(result);
+}
+
+
+7) Rest Operator :
+Example:
+function sum (a,b)
+{
+return a+b;
+}
+let result = sum (5,4);
+console.log(result);
+//we have a function name sum with 2 parameters a and b that return a + b, sum 5 and 4 so the sum is 9 if we need more than two arguments lets say we have 3 argument so the last argument is ignored we will only accept first 2 so if we want to accept a very amount of arguments where we can use the less parameter so its (…args).
+Example :
+function sum(...args){
+let total = 0;
+for (let i in args)
+{
+total +=args[i];
+}
+return total;
+}
+console.log(1,2,3,4,5,6,7,8)
