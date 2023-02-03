@@ -1,0 +1,121 @@
+Question 1:
+
+array.findIndex()
+The findIndex() method returns the index of the first element in an array that satisfies the provided testing function.
+Example:
+let arr= [2,3,4,5,6];
+let result = arr.findIndex(function(element)
+{
+return element&gt;2;
+})
+console.log(result);
+
+array.fill()
+The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index.It
+return the modified array.
+Example:
+const array = [1, 2, 3, 4];
+// Fill with 0 from position 2 until position 4
+console.log(array.fill(0, 2, 4));
+// Fill with 5 from position 1
+console.log(array.fill(5, 1));
+//Fill with 6
+console.log(array.fill(6));
+
+array.at()
+Use the at() method to return an element of an array by an index.
+The at() method with a negative index will return an element from the end of the array.
+Example 1:
+let arr = [2,4,5,3,6]
+let result = arr.at(1)
+console.log(result);
+Example 2:
+let arr = [2,4,5,3,6]
+let result = arr.at(-1)
+console.log(result);
+
+array.join()
+The join() method returns an array as a string.
+The join() method does not change the original array.
+
+Example:
+const fruits = [Banana, Orange, Apple, Mango];
+let text = fruits.join();
+console.log(text);
+
+Question 2:
+const items = [
+{ name: apples , qty: 30 },
+{ name: bananas, qty: 40 },
+{ name: apples, qty: 50 }
+];
+
+// output
+[
+{ name: apples, qty: 80 },
+{ name: ;bananas, qty: 40 }
+];
+
+Question 3:
+const movies = [
+{ title: a, year: 2018, rating: 4.5 },
+{ title: b, year: 2018, rating: 4.7 },
+{ title: c, year: 2018, rating: 3 },
+{ title: d, year: 2017, rating: 4.5 }
+];
+a) get all the movies in 2018 with rating &gt; 4
+let result = movies.filter(function(element)
+{
+return (element.year===2018 &&; element.rating;4)
+})
+console.log(result);
+b) Sort them by their rating in decending order
+let result = movies.sort(function(n,m)
+{
+return(m.rating-n.rating)
+});
+console.log(result);
+c) pick their title
+let result = movies.map(function(element)
+{
+return element.title
+});
+console.log(result);
+
+Question 4: Solve this problem by reduce function
+const orders = [
+{ id: 1, status: pending },
+{ id: 2, status: pending },
+{ id: 3, status: cancelled},
+{ id: 4, status: shipped },
+];
+let result = orders.reduce(function(val,orders)
+{
+val [orders.status] =(val[orders.status] || 0)+1
+return val
+},{});
+console.log(result);
+// output should be (count of occurences )
+{
+pending: 2, cancelled: 1, shipped: 1
+}
+
+Question 5:
+let a = { a: 'a', b: 'b', c: 'c',d: 'd', e: 'e', f: 'f', g: 'g'};
+let val=0;
+let even={};
+let odd={};
+for(let key in a)
+{
+if (val%2==0)
+{
+even[key]=a[key]
+}
+else
+{
+odd[key]=a[key]
+}
+val++;
+}
+console.log(even);
+console.log(odd);
