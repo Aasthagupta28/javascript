@@ -14,13 +14,6 @@ let result = people.reduce(function(sum,i){
  console.log(result);
 
 
-let sum = 0;
-for (let i = 0; i < people.length; i++) {
-  sum += people[i].age;}
-console.log(sum);
-
-
-
 // // 3. get array of names
  let result = people.map(function(element)
  {
@@ -65,10 +58,13 @@ console.log(result);
 // { id: "3", status: "cancelled" },
 // { id: "4", status: "shipped" },
 // ];
-// // output should be (count of occurences )
-// {
-// pending: 2, cancelled: 1, shipped: 1
-// }
+
+let result = orders.reduce((val,order) =>
+{
+    val [order.status] =(val[order.status] || 0)+1 
+    return val;
+},{});
+console.log(result);
 
 // Question 3:
 // const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
